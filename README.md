@@ -4,7 +4,7 @@
 
 | Command    |                   Information                  |
 | ---------- | :--------------------------------------------: |
-| start      |             Run development server             |
+| start      |           Run the development server           |
 | build:dev  |  Run build script and set NODE_ENV=development |
 | build:prod |  Run build script and set NODE_ENV=production  |
 
