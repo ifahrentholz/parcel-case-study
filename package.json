@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/parcel src/pages/index.hbs",
-    "build:dev": "NODE_ENV=development ./node_modules/.bin/parcel build src/pages/index.hbs --no-cache",
-    "build:prod": "NODE_ENV=production ./node_modules/.bin/parcel build src/pages/index.hbs --no-cache"
+    "start": "parcel src/pages/index.hbs --no-cache",
+    "build:dev": "NODE_ENV=development parcel build src/pages/index.hbs --no-cache",
+    "build:prod": "NODE_ENV=production parcel build src/pages/index.hbs --no-cache"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,8 @@
     "parcel-bundler": "1.11.0",
     "parcel-plugin-clean-dist": "0.0.6",
     "parcel-plugin-handlebars": "0.4.4",
-    "sass": "1.16.1"
-  }
+    "sass": "1.16.1",
+    "typescript": "3.2.4"
+  },
+  "dependencies": {}
 }
