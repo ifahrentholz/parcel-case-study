@@ -51,3 +51,21 @@ function updatePerson(person: Person, prop: Partial<Person>) {
 
 const partialPerson = updatePerson(person, { age: 43 });
 console.log(partialPerson);
+
+interface Bob {
+  name?: string;
+  age?: number;
+}
+
+type SetRequired<T> = { [K in keyof T]-?: T[K] };
+
+function printBob(person: Required<Bob>) {
+  return `${person.name} is ${person.age}`;
+}
+
+const bobPerson: Required<Bob> = {
+  name: "Ingo Bob",
+  age: 33
+};
+
+const bobAge = printBob(bobPerson);
