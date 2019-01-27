@@ -6,7 +6,8 @@
   "scripts": {
     "start": "parcel src/pages/index.hbs --no-cache",
     "build:dev": "NODE_ENV=development parcel build src/pages/index.hbs --no-cache",
-    "build:prod": "NODE_ENV=production parcel build src/pages/index.hbs --no-cache"
+    "build:prod": "NODE_ENV=production parcel build src/pages/index.hbs --no-cache",
+    "build:yolo": "parcel build src/main.ts src/pick.ts src/typeof.ts --no-cache"
   },
   "keywords": [],
   "author": "",
