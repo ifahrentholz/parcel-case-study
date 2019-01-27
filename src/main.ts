@@ -1,3 +1,8 @@
+interface Person {
+  name: string;
+  age: number;
+}
+
 const person = {
   name: "Ingo Person",
   age: 33,
@@ -24,7 +29,7 @@ console.log("authorName", authorName);
 console.log("bookPages", bookPages);
 
 // READONLY
-type MyReadonly<T> = { readonly [P in keyof T]: T[P] };
+type MyReadonly<T> = { readonly [K in keyof T]?: T[K] };
 
 function freeze<T>(obj: T): MyReadonly<T> {
   return Object.freeze(obj);
@@ -34,3 +39,15 @@ const newPerson = freeze(book);
 
 // As expected this would'nt work.
 // newPerson.author = "YUSUF"
+
+// Demo code since Typescript has that logic build in via "Partial"
+type MyPartial<T> = { [K in keyof T]?: T[K] };
+
+// Partial is build in Typescript. For demo purposes we created our own partial
+// logic in "MyPartial" to illustrate the logic behind.
+function updatePerson(person: Person, prop: Partial<Person>) {
+  return { ...person, ...prop };
+}
+
+const partialPerson = updatePerson(person, { age: 43 });
+console.log(partialPerson);
